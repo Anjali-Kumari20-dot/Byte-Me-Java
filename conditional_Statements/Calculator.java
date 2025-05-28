@@ -8,34 +8,34 @@ public class Calculator {
         System.out.println("Please enter two numbers : ");
         int num1 = sc.nextInt();
         int num2 = sc.nextInt();
-        System.out.println("Case 1: Addition");
-        System.out.println("Case 2: Subtraction");
-        System.out.println("Case 3: Multiplication");
-        System.out.println("Case 4: Division");
-        System.out.println("Case 5: Remainder");
+        System.out.println("Press '+': Addition");
+        System.out.println("Press '-': Subtraction");
+        System.out.println("Press '*': Multiplication");
+        System.out.println("Press '/': Division");
+        System.out.println("Press '%': Remainder");
         System.out.println("------------------------------");
-        System.out.print("Enter Marzi from 1 to 5 : ");
-        int marzi = sc.nextInt();
+        System.out.print("Enter Marzi : ");
+        char marzi = sc.next().charAt(0);
         int calculate;
 
         switch (marzi) {
-            case 1:
+            case '+':
                 calculate = num1 + num2;
                 System.out.println(num1 + " + " + num2 + " = " + calculate);
                 break;
-            case 2:
+            case '-':
                 calculate = num1 - num2;
                 System.out.println(num1 + " - " + num2 + " = " + calculate);
                 break;
-            case 3:
+            case '*':
                 calculate = num1 * num2;
                 System.out.println(num1 + " x " + num2 + " = " + calculate);
                 break;
-            case 4:
+            case '/':
                 calculate = num1 / num2;
                 System.out.println(num1 + " / " + num2 + " = " + calculate);
                 break;
-            case 5:
+            case '%':
                 calculate = num1 % num2;
                 System.out.println(num1 + " % " + num2 + " = " + calculate);
                 break;
