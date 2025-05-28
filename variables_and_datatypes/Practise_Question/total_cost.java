@@ -9,11 +9,11 @@ public class total_cost {
         int pen_price = sc.nextInt();
         int eraser_price = sc.nextInt();
         float gst = 0.18f;
-        float tax = (float)(pen_price*gst + pencil_price*gst + eraser_price*gst);
+        float tax = (float) (pen_price * gst + pencil_price * gst + eraser_price * gst);
         int amount = (pen_price + pencil_price + eraser_price);
         float total_price = (amount - tax);
-        System.out.println("Tax         : " + tax ); 
-        System.out.println("Amount      : "+ amount); 
-        System.out.println("Total Price : "+total_price); 
+        System.out.println("Amount      : " + amount);
+        System.out.println("Tax         : " + tax);
+        System.out.println("Total Price : " + total_price);
     }
 }
