@@ -1,0 +1,23 @@
+Paramters -> function defination or formal Actual function
+
+Arguments -> During calling a function or Actual function
+
+What happens in Memory?
+in the form of call stack
+memory occupied -> stack frame
+it stores 
+
+CALL BY VALUE
+java always call by value
+jitne bhi changes honge wo function ke andr hi hoga
+
+
+CALL BY REFERENCE
+
+
+FUNTION OVERLOADING
+multiple function with same name but different Paramters
+
+
+
+///////****** NOTES ********//////////
