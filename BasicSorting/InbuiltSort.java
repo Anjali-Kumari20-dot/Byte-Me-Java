@@ -18,6 +18,5 @@ public class InbuiltSort {
         // Sorting the entire array in descending order
         Arrays.sort(arr, Collections.reverseOrder());
         printArray(arr);
-
     }
 }
