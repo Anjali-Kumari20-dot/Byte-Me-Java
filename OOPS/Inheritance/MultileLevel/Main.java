@@ -2,7 +2,7 @@ package OOPS.Inheritance.MultileLevel;
 
 public class Main {
     public static void main(String[] args) {
-        Manager m = new Manager("Alice", 35 , "TechCorp", "Engineering");
+        Manager m = new Manager("Alice", 35, "TechCorp", "Engineering");
         m.showInfo();
         m.showCompany();
         m.showDepartment();
@@ -23,26 +23,28 @@ class Person {
     }
 }
 
-class Employee extends Person{
+class Employee extends Person {
     String company;
-    Employee (String name, int age, String company){
+
+    Employee(String name, int age, String company) {
         super(name, age);
         this.company = company;
     }
+
     void showCompany() {
-        System.out.println("Company : "+company);
+        System.out.println("Company : " + company);
     }
 }
 
-class Manager extends Employee{
+class Manager extends Employee {
     String department;
 
-    Manager(String name, int age, String company, String department){
+    Manager(String name, int age, String company, String department) {
         super(name, age, company);
         this.department = department;
     }
 
-    void showDepartment(){
+    void showDepartment() {
         System.out.println("Department: " + department);
     }
 }

@@ -41,6 +41,6 @@ public class Operations {
        System.out.println(ClearIthBit(10, 1));
        System.out.println(UpdateIthBit(10, 2, 1));
        System.out.println(ClearLastIthBits(15, 2));
-       System.out.println(ClearRangeOfBits(10, 2, 4));
+       System.out.println(ClearRangeOfBits(10, 2, 4 ));
     }
 }

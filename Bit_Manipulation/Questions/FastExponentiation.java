@@ -7,7 +7,7 @@ public class FastExponentiation {
             if((n & 1) != 0){ // check LSB
                 ans = ans * a;
             }
-            a = a * a;
+            a *= a;
             n >>= 1;
         }
         return ans;
