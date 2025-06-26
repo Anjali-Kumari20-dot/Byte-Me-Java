@@ -144,3 +144,27 @@ Here's the breakdown:
     Writing polymorphic methods
     Debugging polymorphic behavior
     Common pitfalls (e.g., hiding vs overriding)
+
+## PACKAGES
+
+    In Java, a package is a namespace that organizes a set of related classes and interfaces—kind of like folders on your computer that help keep things tidy and manageable. Packages help avoid name conflicts and make it easier to locate and use classes.
+
+ ## 🧩 Types of Packages in Java
+    1.Built-in Packages: These are provided by Java itself. Examples include:
+
+        java.util – contains utility classes like ArrayList, HashMap, etc.
+
+        java.io – for input and output operations.
+
+        java.lang – fundamental classes like String, Math, etc. (imported by default).
+
+    2.User-defined Packages: These are packages you create to group your own classes logically.
+
+## 🛠️ How to Create a User-defined Package
+    Here’s a simple step-by-step:
+
+        1.Create the Package and Class
+        
+        2.Compile the Class Use the -d flag to specify the destination directory:
+        
+        3.Use the Package in Another Class
