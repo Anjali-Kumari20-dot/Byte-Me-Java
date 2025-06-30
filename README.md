@@ -168,3 +168,27 @@ Here's the breakdown:
         2.Compile the Class Use the -d flag to specify the destination directory:
         
         3.Use the Package in Another Class
+
+## ABSTRACTION
+    Abstraction in Java means hiding unnecessary details and exposing only the essential features to the user. It’s achieved using abstract classes and interfaces, which define what needs to be done, not how it’s done.
+
+### Abstract Classes
+    -->> An abstract class is like a blueprint for other classes. You can’t create an object from it directly, but it can define both implemented (concrete) and unimplemented (abstract) methods.
+
+#### 🌟 Why Use It?
+    ->> Helps define common structure across different subclasses
+
+    ->> Supports partial implementation for shared behavior
+
+    ->> Great for creating polymorphic designs
+#### 🧭 Interface in Java: The Blueprint
+    ->> An interface is like a contract or blueprint for classes.
+
+    ->> It defines what a class should do, but not how to do it.
+
+    ->> All methods in interfaces are public and abstract by default (unless marked default or static).
+
+    ->> Variables in interfaces are implicitly public, static, and final.
+
+##### 🔄 Multiple Inheritance via Interface
+    ->> Java doesn’t support multiple inheritance with classes (to avoid complexity and ambiguity, aka the “diamond problem”). But it does support it with interfaces!
