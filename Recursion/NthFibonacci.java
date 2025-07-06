@@ -7,6 +7,6 @@ public class NthFibonacci {
     }
     public static void main(String[] args) {
         int n = 7;
-        System.out.println("Fibonacci number at position " + n + " is : " + fib(5));
+        System.out.println("Fibonacci number at position " + n + " is : " + fib(n));
     }
 }
