@@ -1,6 +1,6 @@
 package Recursion;
 
-public class RemoveDuplicateStrings {
+public class RemoveDuplicateStrings { // leetcode 1047 , 1209
     public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean[] map){
         // base case
         if(idx == str.length()){
