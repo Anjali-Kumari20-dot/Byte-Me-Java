@@ -15,12 +15,7 @@ public class FindSubsets {
         findSubsetsInStrings(str, i + 1, ans+str.charAt(i));
         findSubsetsInStrings(str, i + 1, ans);
     }
-    public static void printArray(int arr[]){
-        for(int i = 0; i < arr.length; i++){
-            System.out.print(arr[i]);
-        }
-        System.out.println();
-    }
+
     public static void findSubsetsInArray(int[] arr, int i, List<Integer> ans){
         if(i == arr.length){
             if(ans.isEmpty()){
