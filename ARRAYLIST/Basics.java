@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Basics {
     public static void main(String[] args) {
-        // String | Boolean | Integer | Float -> class
+        // String | Boolean | Integer | Float -> Wrapper class
         // ClassName objectName = new Classname();
         ArrayList<Integer> List1 = new ArrayList<>();
         ArrayList<String> List2 = new ArrayList<>();
