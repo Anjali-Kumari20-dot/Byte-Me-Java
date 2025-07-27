@@ -44,11 +44,32 @@ public class LinkedList {
         tail = newNode ;
     }
 
+    // Display 
+    public void display(){
+
+        if(head == null){
+            System.out.println("Linked List is empty");
+            return;
+        }
+
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
+        ll.display();
         ll.addFirst(11);
+        ll.display();
         ll.addFirst(12);
+        ll.display();
         ll.addLast(13);
+        ll.display();
         ll.addLast(14);
+        ll.display();
     }
 }
