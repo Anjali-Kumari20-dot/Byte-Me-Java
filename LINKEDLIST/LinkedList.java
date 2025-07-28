@@ -108,7 +108,7 @@ public class LinkedList {
     }
 
     // Search(iterative)
-    public int Search(int target){
+    public int itrSearch(int target){
         Node temp = head;
         int i = 0;
         
@@ -120,6 +120,27 @@ public class LinkedList {
             i++;
         }
         return -1;
+    }
+
+    // Search (Recursive)
+    public int helper(Node head, int key){
+        if(head == null){
+            return -1;
+        }
+        if(head.data == key){
+            return 0;
+        }
+
+        int idx = helper(head.next, key);
+        if(idx == -1){
+            return -1;
+        }
+
+        return idx + 1;
+    }
+
+    public int recSearch(int key){
+        return helper(head, key);
     }
 
     // Display
@@ -156,8 +177,8 @@ public class LinkedList {
         // System.out.println("Removed from last : " + ll.removeLast());
         // ll.display();
 
-        System.out.println("Search for 12 at position : "+ ll.Search(12));
-        System.out.println("Search for 55 at position : "+ ll.Search(55));
+        System.out.println("Search for 12 at position : "+ ll.itrSearch(12));
+        System.out.println("Search for 55 at position : "+ ll.itrSearch(55));
 
         // System.out.println("Size of Linked list : " + size);
 
