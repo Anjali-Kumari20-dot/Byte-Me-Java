@@ -67,6 +67,11 @@ public class LinkedList {
         temp.next = newNode;
     }
 
+    // Remove first
+    public void removeFirst(){
+        head = head.next;
+    }
+
     // Display
     public void display() {
 
@@ -94,5 +99,8 @@ public class LinkedList {
 
         ll.display();
         System.out.println("Size of Linked list : " + size);
+
+        ll.removeFirst();
+        ll.display();
     }
 }
