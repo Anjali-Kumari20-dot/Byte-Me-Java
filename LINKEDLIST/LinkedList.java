@@ -100,11 +100,26 @@ public class LinkedList {
             prev = prev.next;
         }
 
-        int val = prev.next.data;
+        int val = prev.next.data; // tail.data
         prev.next = null;
         tail = prev;
         size--;
         return val;
+    }
+
+    // Search(iterative)
+    public int Search(int target){
+        Node temp = head;
+        int i = 0;
+        
+        while(temp != null){
+            if(temp.data == target){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
     }
 
     // Display
@@ -132,16 +147,19 @@ public class LinkedList {
         ll.addLast(14);
         ll.addMiddle(2, 55);
 
-        System.out.print("Before Removal LL : ");
+        // System.out.print("Before Removal LL : ");
         ll.display();
 
         // System.out.println("Removed from first : " + ll.removeFirst());
         // ll.display();
 
-        System.out.println("Removed from last : " + ll.removeLast());
-        ll.display();
+        // System.out.println("Removed from last : " + ll.removeLast());
+        // ll.display();
 
-        System.out.println("Size of Linked list : " + size);
+        System.out.println("Search for 12 at position : "+ ll.Search(12));
+        System.out.println("Search for 55 at position : "+ ll.Search(55));
+
+        // System.out.println("Size of Linked list : " + size);
 
     }
 }
