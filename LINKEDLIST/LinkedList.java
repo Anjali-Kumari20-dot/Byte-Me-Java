@@ -1,11 +1,11 @@
 package LINKEDLIST;
 
 public class LinkedList {
-    public class Node{
+    public class Node {
         int data;
         Node next;
 
-        public Node(int data){
+        public Node(int data) {
             this.data = data;
             this.next = null;
         }
@@ -15,11 +15,11 @@ public class LinkedList {
     public static Node tail;
 
     // Add first - O(1)
-    public void addFirst(int data){
+    public void addFirst(int data) {
         // Step1 = create new Node
         Node newNode = new Node(data);
 
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
@@ -32,28 +32,47 @@ public class LinkedList {
     }
 
     // Add Last - O(1)
-    public void addLast(int data){
+    public void addLast(int data) {
         Node newNode = new Node(data);
 
-        if(tail == null){
+        if (tail == null) {
             head = tail = newNode;
             return;
         }
 
         tail.next = newNode;
-        tail = newNode ;
+        tail = newNode;
     }
 
-    // Display 
-    public void display(){
+    // Add Middle - O(n)
+    public void addMiddle(int idx, int data) {
+        Node newNode = new Node(data);
+        Node temp = head;
 
-        if(head == null){
+        if (idx == 0) {
+            addFirst(data);
+            return;
+        }
+        int i = 0;
+        while (i < idx - 1) {
+            temp = temp.next;
+            i++;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+    // Display
+    public void display() {
+
+        if (head == null) {
             System.out.println("Linked List is empty");
             return;
         }
 
         Node temp = head;
-        while(temp != null){
+        while (temp != null) {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
@@ -62,14 +81,13 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
-        ll.display();
+
         ll.addFirst(11);
-        ll.display();
         ll.addFirst(12);
-        ll.display();
         ll.addLast(13);
-        ll.display();
         ll.addLast(14);
+        ll.addMiddle(2, 55);
+
         ll.display();
     }
 }
