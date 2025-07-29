@@ -108,12 +108,12 @@ public class LinkedList {
     }
 
     // Search(iterative)
-    public int itrSearch(int target){
+    public int itrSearch(int target) {
         Node temp = head;
         int i = 0;
-        
-        while(temp != null){
-            if(temp.data == target){
+
+        while (temp != null) {
+            if (temp.data == target) {
                 return i;
             }
             temp = temp.next;
@@ -123,40 +123,24 @@ public class LinkedList {
     }
 
     // Search (Recursive)
-    public int helper(Node head, int key){
-        if(head == null){
+    public int helper(Node head, int key) {
+        if (head == null) {
             return -1;
         }
-        if(head.data == key){
+        if (head.data == key) {
             return 0;
         }
 
         int idx = helper(head.next, key);
-        if(idx == -1){
+        if (idx == -1) {
             return -1;
         }
 
         return idx + 1;
     }
 
-    public int recSearch(int key){
+    public int recSearch(int key) {
         return helper(head, key);
-    }
-
-
-    // Reverse
-    public void reverse() {
-        Node prev = null;
-        Node curr = tail = head;
-        Node next;
-        
-        while(curr != null){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-        }
-        head = prev;
     }
 
     // Display
@@ -175,6 +159,51 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    // Reverse
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+    // Remove nth node
+    public void removeNthNodeFromEnd(int pos) {
+
+        // calculate size
+        int sz = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            temp = temp.next;
+            sz++;
+        }
+
+        if (pos == sz) {
+            head = head.next; // remove first
+            return;
+        }
+
+        // sz - pos
+        int i = 1;
+        int iToFind = sz - pos;
+        Node prev = head;
+        while (i < iToFind) {
+            prev = prev.next;
+            i++;
+        }
+
+        prev.next = prev.next.next;
+        return;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
@@ -188,12 +217,16 @@ public class LinkedList {
         // ll.addLast(14);
         // ll.addMiddle(2, 55);
 
-        System.out.print("Before Reverse : ");
+        System.out.print("Before : ");
         ll.display();
 
-        ll.reverse();
-        System.out.print("After Reverse : ");
+        ll.removeNthNodeFromEnd(3);
+        System.out.print("After : ");
         ll.display();
+
+        // ll.reverse();
+        // System.out.print("After Reverse : ");
+        // ll.display();
 
         // System.out.println("Removed from first : " + ll.removeFirst());
         // ll.display();
