@@ -143,6 +143,22 @@ public class LinkedList {
         return helper(head, key);
     }
 
+
+    // Reverse
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+        
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     // Display
     public void display() {
 
@@ -164,11 +180,19 @@ public class LinkedList {
 
         ll.addFirst(11);
         ll.addFirst(12);
-        ll.addLast(13);
-        ll.addLast(14);
-        ll.addMiddle(2, 55);
+        ll.addFirst(13);
+        ll.addFirst(14);
+        ll.addFirst(15);
 
-        // System.out.print("Before Removal LL : ");
+        // ll.addLast(13);
+        // ll.addLast(14);
+        // ll.addMiddle(2, 55);
+
+        System.out.print("Before Reverse : ");
+        ll.display();
+
+        ll.reverse();
+        System.out.print("After Reverse : ");
         ll.display();
 
         // System.out.println("Removed from first : " + ll.removeFirst());
@@ -177,8 +201,11 @@ public class LinkedList {
         // System.out.println("Removed from last : " + ll.removeLast());
         // ll.display();
 
-        System.out.println("Search for 12 at position : "+ ll.itrSearch(12));
-        System.out.println("Search for 55 at position : "+ ll.itrSearch(55));
+        // System.out.println("Search for 12 at position : "+ ll.itrSearch(12));
+        // System.out.println("Search for 55 at position : "+ ll.itrSearch(55));
+
+        // System.out.println("Search for 12 at position : "+ ll.recSearch(12));
+        // System.out.println("Search for 55 at position : "+ ll.recSearch(55));
 
         // System.out.println("Size of Linked list : " + size);
 
