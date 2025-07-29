@@ -176,11 +176,9 @@ public class LinkedList {
 
     // Remove nth node
     public void removeNthNodeFromEnd(int pos) {
-
         // calculate size
         int sz = 0;
         Node temp = head;
-
         while (temp != null) {
             temp = temp.next;
             sz++;
@@ -190,7 +188,6 @@ public class LinkedList {
             head = head.next; // remove first
             return;
         }
-
         // sz - pos
         int i = 1;
         int iToFind = sz - pos;
@@ -199,19 +196,67 @@ public class LinkedList {
             prev = prev.next;
             i++;
         }
-
         prev.next = prev.next.next;
         return;
     }
 
+    // Find Mid Node - Slow/Fast Approach
+    public Node MidNode(Node node){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    // Check Palindrome
+    public boolean isPalindrome(){
+        if(head == null || head.next == null){
+            return true;
+        }
+        
+        // Find mid
+        Node mid = MidNode(head);
+
+        // Reverse 2nd half 
+        Node prev = null;
+        Node curr = mid;
+
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        // Check if equal
+        Node left = head;
+        Node right = prev;
+
+        while(right != null){
+
+            if(left.data != right.data){
+                return false;
+            }
+
+            left = left.next;
+            right = right.next;
+        }
+
+        return true;
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
-        ll.addFirst(11);
-        ll.addFirst(12);
-        ll.addFirst(13);
-        ll.addFirst(14);
-        ll.addFirst(15);
+        ll.addLast(11);
+        ll.addLast(12);
+        ll.addLast(13);
+        ll.addLast(12);
+        ll.addLast(11);
 
         // ll.addLast(13);
         // ll.addLast(14);
@@ -220,9 +265,11 @@ public class LinkedList {
         System.out.print("Before : ");
         ll.display();
 
-        ll.removeNthNodeFromEnd(3);
-        System.out.print("After : ");
-        ll.display();
+        System.out.println("Is Palindrome : " + ll.isPalindrome());
+
+        // ll.removeNthNodeFromEnd(3);
+        // System.out.print("After : ");
+        // ll.display();
 
         // ll.reverse();
         // System.out.print("After Reverse : ");
