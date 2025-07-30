@@ -144,7 +144,7 @@ public class LinkedList {
     }
 
     // Display
-    public void display() {
+    public static void display() {
 
         if (head == null) {
             System.out.println("Linked List is empty");
@@ -243,7 +243,7 @@ public class LinkedList {
     }
     
     // Detect loop/cycle in a LL
-    public static boolean hasLoop(){
+    public static boolean hasCycle(){
         Node slow = head;
         Node fast = head;
 
@@ -258,6 +258,38 @@ public class LinkedList {
         return false;
     }
 
+    // Remove a loop/cycle in a LL
+    public static void removeLoop(){
+        // Detect Cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(fast == slow){
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle == false){
+            System.out.println("Cycle does not exists.");
+            return;
+        }
+        // find meeting point
+        slow = head;
+        Node prev = null;
+        while(slow != fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        // break cycle
+        prev.next = null;
+    }
+
     public static void main(String[] args) {
         // LinkedList ll = new LinkedList();
 
@@ -266,7 +298,7 @@ public class LinkedList {
         // ll.addLast(13);
         // ll.addLast(12);
         // ll.addLast(11);
-
+        
         // ll.addLast(13);
         // ll.addLast(14);
         // ll.addMiddle(2, 55);
@@ -301,10 +333,15 @@ public class LinkedList {
         head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = head;
+        Node temp = new Node(4);
+        head.next.next.next = temp;
+        temp.next = new Node(5);
+        temp.next.next = new Node(6);
+        temp.next.next.next = new Node(7);
+        temp.next.next.next.next = head.next;
 
-        System.out.println(hasLoop());
+        removeLoop();
+        display();
 
     }
 }
