@@ -1,11 +1,11 @@
 package LINKEDLIST;
 
 public class LinkedList {
-    public class Node {
+    static class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+        public  Node(int data) {
             this.data = data;
             this.next = null;
         }
@@ -209,7 +209,6 @@ public class LinkedList {
             slow = slow.next;
             fast = fast.next.next;
         }
-
         return slow;
     }
 
@@ -218,54 +217,64 @@ public class LinkedList {
         if(head == null || head.next == null){
             return true;
         }
-        
         // Find mid
         Node mid = MidNode(head);
 
         // Reverse 2nd half 
         Node prev = null;
         Node curr = mid;
-
         while(curr != null){
             Node next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
         }
-
         // Check if equal
         Node left = head;
         Node right = prev;
-
         while(right != null){
-
             if(left.data != right.data){
                 return false;
             }
-
             left = left.next;
             right = right.next;
         }
-
         return true;
     }
-    public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+    
+    // Detect loop/cycle in a LL
+    public static boolean hasLoop(){
+        Node slow = head;
+        Node fast = head;
 
-        ll.addLast(11);
-        ll.addLast(12);
-        ll.addLast(13);
-        ll.addLast(12);
-        ll.addLast(11);
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        // LinkedList ll = new LinkedList();
+
+        // ll.addLast(11);
+        // ll.addLast(12);
+        // ll.addLast(13);
+        // ll.addLast(12);
+        // ll.addLast(11);
 
         // ll.addLast(13);
         // ll.addLast(14);
         // ll.addMiddle(2, 55);
 
-        System.out.print("Before : ");
-        ll.display();
+        // System.out.print("Before : ");
+        // ll.display();
 
-        System.out.println("Is Palindrome : " + ll.isPalindrome());
+        // System.out.println("Is Palindrome : " + ll.isPalindrome());
 
         // ll.removeNthNodeFromEnd(3);
         // System.out.print("After : ");
@@ -288,6 +297,14 @@ public class LinkedList {
         // System.out.println("Search for 55 at position : "+ ll.recSearch(55));
 
         // System.out.println("Size of Linked list : " + size);
+
+        head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = head;
+
+        System.out.println(hasLoop());
 
     }
 }
