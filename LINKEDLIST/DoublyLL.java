@@ -69,24 +69,47 @@ public class DoublyLL {
 
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " -> ");
+            System.out.print(temp.data + " <-> ");
             temp = temp.next;
         }
         System.out.println("null \n");
     }
 
+    // Reverse Doubly LL
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        
+        while(curr != null){
+            Node next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
     public static void main(String[] args) {
         DoublyLL ll = new DoublyLL();
         ll.addFirst(1);
         ll.addFirst(2);
         ll.addLast(3);
+
         System.out.println("Original LL : ");
         ll.printLL();
-        System.out.println("Remove data from first : ");
-        ll.removeFirst();
+
+        System.out.println("Reversed LL : ");
+        ll.reverse();
         ll.printLL();
-        System.out.println("Remove data from last : ");
-        ll.removeLast();
-        ll.printLL();
+
+
+        // System.out.println("Remove data from first : ");
+        // ll.removeFirst();
+        // ll.printLL();
+
+        // System.out.println("Remove data from last : ");
+        // ll.removeLast();
+        // ll.printLL();
     }
 }
