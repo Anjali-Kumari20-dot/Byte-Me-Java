@@ -17,7 +17,7 @@ public class DoublyLL {
     static Node tail;
     static int size;
 
-    // Add
+    // Add data in first of Double LL
     public void addFirst(int data) {
         Node newNode = new Node(data);
 
@@ -30,6 +30,7 @@ public class DoublyLL {
         }
     }
 
+    // Add data in last of Double LL
     public void addLast(int data){
         Node newNode = new Node(data);
 
@@ -40,6 +41,24 @@ public class DoublyLL {
             tail.next = newNode;
             tail = newNode;
         }
+    }
+   
+    // Remove data from first
+    public void removeFirst(){
+        if(head == null){
+            return;
+        }
+        head = head.next;
+        head.prev = null;
+    }
+
+    // Remove data from last
+    public void removeLast(){
+        if(head == null){
+            return;
+        }
+        tail = tail.prev;
+        tail.next = null;
     }
 
     // Print
@@ -53,7 +72,7 @@ public class DoublyLL {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.print("null");
+        System.out.println("null \n");
     }
 
     public static void main(String[] args) {
@@ -61,6 +80,13 @@ public class DoublyLL {
         ll.addFirst(1);
         ll.addFirst(2);
         ll.addLast(3);
+        System.out.println("Original LL : ");
+        ll.printLL();
+        System.out.println("Remove data from first : ");
+        ll.removeFirst();
+        ll.printLL();
+        System.out.println("Remove data from last : ");
+        ll.removeLast();
         ll.printLL();
     }
 }
