@@ -1,5 +1,4 @@
 package STACK;
-
 import java.util.ArrayList;
 
 public class StackUsingArrayList {
