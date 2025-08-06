@@ -43,6 +43,7 @@ public class StackUsingJCF {
             s.pop();
         }
     }
+    
     public static void main(String[] args) {
         Stack<Integer> s = new Stack<>();
         String str = "Anjali";
