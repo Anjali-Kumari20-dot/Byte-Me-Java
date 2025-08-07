@@ -20,7 +20,7 @@ public class NextGreaterElement {
     }
     public static void main(String[] args) {
         int arr[] = {6, 8, 0, 1, 3};
-        int[] result =  nextGreaterElement(arr);
+        int[] result =  nextGreaterElement(arr);  // output : {8, -1, 1, 3, -1,}
         for(int i = 0; i < result.length; i++){
             System.out.print(result[i] + ", ");
         }

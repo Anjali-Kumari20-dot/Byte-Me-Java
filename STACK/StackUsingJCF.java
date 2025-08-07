@@ -52,7 +52,7 @@ public class StackUsingJCF {
         s.push(3);
         // pushAtBottom(s, 4);
         reverseStack(s);
-        // String res = reverseString(str);
-        // System.out.println(res);
+        String res = reverseString(str);
+        System.out.println(res);
     }
 }
