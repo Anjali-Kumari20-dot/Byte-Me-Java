@@ -83,9 +83,9 @@ public class CircularQueue {
         q.add(1);
         q.add(2);
         q.add(3);
-        System.out.println(q.remove());
+        System.out.println(q.remove()); // output : 1
         q.add(4);
         q.add(5);
-        q.printQueue();
+        q.printQueue(); // output : 2 3 4 5
     }
 }
