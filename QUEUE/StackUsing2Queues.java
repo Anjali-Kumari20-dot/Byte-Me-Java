@@ -77,7 +77,7 @@ public class StackUsing2Queues {
         s.push(3);
 
         while(!s.isEmpty()){
-            System.out.println(s.peek());
+            System.out.println(s.peek()); // output 3 2 1
             s.pop();
         }
     }
