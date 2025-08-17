@@ -4,22 +4,30 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class InterLeaveTwohalvesOfQueue {
-    public static Queue interLeave(Queue<Integer> q){
+    public static Queue<Integer> interLeave(Queue<Integer> q) {
         int size = q.size();
         Queue<Integer> first = new LinkedList<>();
-        
+
         int i = 0;
-        while(i < size/2){
-            first.add(q.remove());
-            i++;
+        if (size % 2 == 0) {
+            while (i < size / 2) {
+                first.add(q.remove());
+                i++;
+            }
+        } else {
+            while (i < (size + 1) / 2) {
+                first.add(q.remove());
+                i++;
+            }
         }
 
-        while(!first.isEmpty()){
+        while (!first.isEmpty()) {
             q.add(first.remove());
             q.add(q.remove());
         }
         return q;
     }
+
     public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
         q.add(1);
@@ -31,11 +39,11 @@ public class InterLeaveTwohalvesOfQueue {
         q.add(7);
         q.add(8);
         q.add(9);
-        q.add(10);
+        // q.add(10);
         interLeave(q);
 
-        while(!q.isEmpty()){
-            System.out.print(q.peek() + " ");
+        while (!q.isEmpty()) {
+            System.out.print(q.peek() + " "); // output : 1 6 2 7 3 8 4 9 5 10
             q.remove();
         }
     }
