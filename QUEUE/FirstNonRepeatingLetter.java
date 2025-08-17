@@ -27,6 +27,6 @@ public class FirstNonRepeatingLetter {
     }
     public static void main(String[] args) {
         String str = "aabccxb";
-        printNonRepeating(str);
+        printNonRepeating(str); // output : a -1 b b b b x 
     }
 }
