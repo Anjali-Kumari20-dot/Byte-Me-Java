@@ -52,7 +52,7 @@ public class ReverseQueue {
         // }
         reverseFirstK(q, 3);
         while(!q.isEmpty()){
-            System.out.print(q.peek() + " ");
+            System.out.print(q.peek() + " "); // output : 3 2 1 4 5 
             q.remove();
         }
     }
