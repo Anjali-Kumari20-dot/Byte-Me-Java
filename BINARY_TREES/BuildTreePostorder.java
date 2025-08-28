@@ -33,7 +33,6 @@ public class BuildTreePostorder {
 
     public static void postorder(Node root){ // O(n)
         if(root == null){
-            System.out.print("-1 ");
             return;
         }
         postorder(root.left); // left
