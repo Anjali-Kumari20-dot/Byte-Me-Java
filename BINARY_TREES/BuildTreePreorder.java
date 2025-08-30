@@ -12,7 +12,6 @@ public class BuildTreePreorder {
             this.right = null;
         }
     }
-
     static class BinaryTree{
         static int idx = -1;
 
