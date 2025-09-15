@@ -23,10 +23,10 @@ public class HeightOfTree {
     public static void main(String[] args) {
         /*
                     1 
-                  /  \
-                 2    3
-                / \  / \
-               4   5 6  7
+                   / \
+                 2     3
+                / \   / \
+               4   5 6   7
 
          */
         Node root = new Node(1);

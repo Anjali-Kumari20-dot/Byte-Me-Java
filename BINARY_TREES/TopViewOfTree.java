@@ -28,9 +28,7 @@ public class TopViewOfTree {
     public static void topView(Node root) {
         // Level Order
         Queue<Info> q = new LinkedList<>();
-
         HashMap<Integer, Node> map = new HashMap<>();
-
         int min = 0, max = 0;
         q.add(new Info(root, 0));
         q.add(null);

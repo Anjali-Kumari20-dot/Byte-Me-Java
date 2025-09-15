@@ -34,6 +34,6 @@ public class KthLevelNodes {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        kLevel(root, 1, 3);
+        kLevel(root, 1, 3); // output : 4 5 6 7
     }
 }

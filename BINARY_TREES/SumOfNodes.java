@@ -37,7 +37,7 @@ public class SumOfNodes {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        int ht = sum(root);
-        System.out.println("Sum of Nodes : " + ht);
+        int sum = sum(root);
+        System.out.println("Sum of Nodes : " + sum);
     }
 }
