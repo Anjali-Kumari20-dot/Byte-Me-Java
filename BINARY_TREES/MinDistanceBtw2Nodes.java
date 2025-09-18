@@ -25,11 +25,9 @@ public class MinDistanceBtw2Nodes {
         if(rightLca == null){
             return leftLca;
         }
-
         if(leftLca == null){
             return rightLca;
         }
-
         return root;
     }
     public static int lcaDist(Node root, int n){
