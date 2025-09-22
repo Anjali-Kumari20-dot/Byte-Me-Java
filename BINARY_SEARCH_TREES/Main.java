@@ -88,18 +88,38 @@ public class Main {
         return root;
     }
 
+    // Prints all node values in the BST that lie within the range [k1, k2]
     public static void printInRange(Node root, int k1, int k2) {
+
+        // Base case: if the current node is null, there's nothing to process
         if (root == null) {
             return;
         }
+
+        // if current node's data lies within the range, process both left and right
+        // subtree
         if (root.data >= k1 && root.data <= k2) {
+
+            // Explore left subtree for more values in the range
             printInRange(root.left, k1, k2);
+
+            // print current node's data since it's within the range
             System.out.print(root.data + " ");
+
+            // Explore right subtree for more values in the range
             printInRange(root.right, k1, k2);
-        } else if (root.data < k1) {
+        }
+
+        // if current node's data is less than k1, skip left subtree (all values will be
+        // smaller)
+        else if (root.data < k1) {
+            printInRange(root.right, k1, k2);
+        }
+
+        // if current node's data is greater than k2, skip the right subtree (all values
+        // will be larger)
+        else {
             printInRange(root.left, k1, k2);
-        } else {
-            printInRange(root.right, k1, k2);
         }
     }
 
@@ -125,16 +145,16 @@ public class Main {
         path.remove(path.size() - 1);
     }
 
-    public static boolean isValidBST(Node root, Node min, Node max){
-        if(root == null){
+    public static boolean isValidBST(Node root, Node min, Node max) {
+        if (root == null) {
             return true;
         }
 
-        if(min != null && root.data <= min.data){
+        if (min != null && root.data <= min.data) {
             return false;
         }
 
-        else if(max != null && root.data >= max.data){
+        else if (max != null && root.data >= max.data) {
             return false;
         }
 
@@ -152,9 +172,9 @@ public class Main {
         inorder(root);
         System.out.println();
 
-        if(isValidBST(root, null, null)){
+        if (isValidBST(root, null, null)) {
             System.out.println("Valid BST");
-        }else{
+        } else {
             System.out.println("Not valid BST");
         }
 
