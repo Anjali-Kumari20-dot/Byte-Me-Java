@@ -13,16 +13,30 @@ public class SortedArray2BalancedBST {
         preorder(root.right);
     }
 
+    // recursively creates a balanced binary search tree (BST) from a sorted array
     public static Node createBST(int arr[], int st, int end){
+        
+        // base case: if start index exeeds end, return null (no node to create)
         if (st > end){
             return null;
         }
+
+        // find the middle element to maintain balance in the BST
         int mid = (st + end)/2;
+        
+        // Create a new Node with the middle element
         Node root = new Node(arr[mid]);
+        
+        // recursively build the left subtree using the left half of the array
         root.left = createBST(arr, st, mid - 1);
+        
+        // recursively create the right subtree using the right half of the array
         root.right = createBST(arr, mid + 1, end);
+
+        // return the root node of the subtree
         return root;
     }
+    
     public static void main(String[] args) {
         int arr[] = {3, 5, 6, 8, 10, 11, 12};
         /*
