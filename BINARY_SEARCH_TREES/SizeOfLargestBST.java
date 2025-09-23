@@ -55,13 +55,13 @@ public class SizeOfLargestBST {
 
     public static void main(String[] args) {
         /*
-         * 50
-         * / \
-         * 30 60
-         * / \ / \
-         * 5 20 45 70
-         * / \
-         * 65 80 -> given BT
+                       50
+                     /    \
+                   30      60
+                  / \      / \
+                 5  20    45 70
+                             / \
+                            65 80 -> given BT
          */
         Node root = new Node(50);
         root.left = new Node(30);
@@ -75,13 +75,13 @@ public class SizeOfLargestBST {
         root.right.right.right = new Node(80);
 
         /*
-         * 60
-         * / \
-         * 45 70
-         * / \
-         * 65 80
-         * 
-         * Expected BST : size = 5
+              60
+              / \
+             45 70
+                / \
+               65 80
+          
+          Expected BST : size = 5
          */
         Info info = largestBST(root);
         System.out.println("Largest BST = " + maxBST);
