@@ -13,6 +13,16 @@ public class operations {
 
         System.out.println(hm);
 
-        
+        // Get - O(1)
+        int population = hm.get("India");
+        System.out.println("Population of India: " + population);
+
+        System.out.println("Population of Indonesia: " + hm.get("Indonesia"));
+
+        // contains key - O(1)
+        System.out.println(hm.containsKey("India"));
+        System.out.println(hm.containsKey("Indonesia"));
+
+
     }
 }
