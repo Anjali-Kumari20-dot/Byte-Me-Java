@@ -24,7 +24,14 @@ public class operations {
         System.out.println(hm.containsKey("Indonesia"));
 
         // remove - O(1)
-        hm.remove("China");
-        System.out.println(hm);
+        // hm.remove("China");
+        // System.out.println(hm);
+
+        // size - O(1)
+        System.out.println("Size of hashmap: " + hm.size()); // 3
+
+        // Is Empty - O(1)
+        hm.clear(); // remove all the key value pairs
+        System.out.println(hm.isEmpty()); // false
     }
 }
