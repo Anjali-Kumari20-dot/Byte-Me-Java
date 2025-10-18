@@ -23,6 +23,8 @@ public class operations {
         System.out.println(hm.containsKey("India"));
         System.out.println(hm.containsKey("Indonesia"));
 
-
+        // remove - O(1)
+        hm.remove("China");
+        System.out.println(hm);
     }
 }
