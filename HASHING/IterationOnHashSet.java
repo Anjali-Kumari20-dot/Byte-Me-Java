@@ -10,10 +10,10 @@ public class IterationOnHashSet {
         cities.add("Tokyo");
         cities.add("Delhi");
 
-        // Iterator it = cities.iterator();
-        // while(it.hasNext()){
-        //     System.out.println(it.next());
-        // }
+        Iterator it = cities.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
 
         // Enhanced for loop
         for(String city : cities){
