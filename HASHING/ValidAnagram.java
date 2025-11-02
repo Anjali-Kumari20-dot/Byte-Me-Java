@@ -28,7 +28,6 @@ public class ValidAnagram {
                 return false;
             }
         }
-
         return map.isEmpty();
     }
     public static void main(String[] args) {

@@ -1,9 +1,7 @@
 package HASHING;
-
 import java.util.HashMap;
-import java.util.Set;
 
-public class MajorityElement {
+public class MajorityElement { // Time Complexity: O(n)
     // Given an integer array of size n, find all elements
     // that appear more than ⌊ n/3 ⌋ times.
 
