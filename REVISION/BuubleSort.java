@@ -18,7 +18,7 @@ public class BuubleSort {
                     swapped = true;
                 }
             }
-            if(!swapped)  break;
+            if(!swapped)  break; // stop early if already sorted
         }
         System.out.println("Sorted array:");
         for(int i = 0; i < n; i++){
